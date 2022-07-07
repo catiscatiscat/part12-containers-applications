@@ -1,0 +1,14 @@
+Script started on 2022-07-07 16:09:53+03:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="209" LINES="58"]
+
+~$ docker start -i beautiful_pascal 
+root@4424dc168ea5:/# apt-get -y install curl
+root@4424dc168ea5:/# curl -sL https://deb.nodesource.com/setup_16.x | bash
+root@4424dc168ea5:/# apt-get install -y nodejs
+root@4424dc168ea5:/# node /usr/src/app/index.js 
+Hello World
+root@4424dc168ea5:/# exit
+exit
+~$ exit
+exit
+
+Script done on 2022-07-07 16:12:36+03:00 [COMMAND_EXIT_CODE="0"]

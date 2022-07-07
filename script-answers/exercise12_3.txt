@@ -1,0 +1,10 @@
+Script started on 2022-07-07 16:04:35+03:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="209" LINES="58"]
+
+~$ docker start i beautiful_pascal 
+root@4424dc168ea5:/# nano /usr/src/app/index.js 
+root@4424dc168ea5:/# exit
+exit
+$ exit
+exit
+
+Script done on 2022-07-07 16:05:35+03:00 [COMMAND_EXIT_CODE="0"]

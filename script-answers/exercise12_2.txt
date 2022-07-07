@@ -1,0 +1,9 @@
+Script started on 2022-07-07 15:19:31+03:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="209" LINES="58"]
+
+~$ docker run -it ubuntu
+root@4424dc168ea5:/# mkdir /usr/src/app
+root@4424dc168ea5:/# touch /usr/src/app/index.js
+root@4424dc168ea5:/# exit
+~$ exit
+
+Script done on 2022-07-07 15:21:24+03:00 [COMMAND_EXIT_CODE="0"]

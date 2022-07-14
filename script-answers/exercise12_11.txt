@@ -1,0 +1,40 @@
+Script started on 2022-07-14 11:36:55+03:00 [TERM="xterm-256color" TTY="/dev/pts/7" COLUMNS="165" LINES="30"]
+ 
+~$ script ../../script-answers/exercise12_11.txt
+~$ docker-compose -f docker-compose.dev.yml up -d
+Creating network "todo-backend_default" with the default driver
+Creating todo-backend_mongo_1 ... done
+Creating todo-backend_redis_1 ... done
+ 
+$ docker container ls
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                     NAMES
+78e444dea743   mongo     "docker-entrypoint.s…"   18 seconds ago   Up 15 seconds   0.0.0.0:3456->27017/tcp   todo-backend_mongo_1
+c0683a632c9f   redis     "docker-entrypoint.s…"   18 seconds ago   Up 15 seconds   0.0.0.0:6379->6379/tcp    todo-backend_redis_1
+ 
+~$ docker exec -it todo-backend_redis_1 bash
+
+root@c0683a632c9f:/data# redis-cli
+
+127.0.0.1:6379> KEYS *
+1) "added_todos"
+127.0.0.1:6379> GET added_todos
+"1"
+127.0.0.1:6379> SET added_todos 9001
+OK
+127.0.0.1:6379> GET added_todos
+"9001"
+127.0.0.1:6379> GET added_todos
+"9002"
+127.0.0.1:6379> DEL added_todos
+(integer) 1
+127.0.0.1:6379> GET added_todos
+(nil)
+127.0.0.1:6379> GET added_todos
+"1"
+127.0.0.1:6379> exit
+
+root@c0683a632c9f:/data# exit
+exit
+ 
+~$ exit
+Script done on 2022-07-14 11:40:14+03:00 [COMMAND_EXIT_CODE="0"]

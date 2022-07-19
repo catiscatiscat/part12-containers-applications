@@ -1,27 +1,20 @@
 services:
   app:
-    image: todo-frontend-dev
+    image: todo-frontend
     build:
       context: ./todo-frontend
-      dockerfile: dev.Dockerfile
-    volumes:
-      - ./todo-frontend:/usr/src/app
-    environment:
-      - REACT_APP_BACKEND_URL=http://localhost:8080/api/
-      - WDS_SOCKET_PORT=8080 # needed for frontend hotloading
-    container_name: todo-frontend-dev
+      dockerfile: Dockerfile
+    container_name: todo-frontend
   
   server:
-    image: todo-backend-dev
+    image: todo-backend
     build:
       context: ./todo-backend
-      dockerfile: dev.Dockerfile
-    volumes:
-      - ./todo-backend:/usr/src/app
+      dockerfile: Dockerfile
     environment:
       - MONGO_URL=mongodb://the_username:the_password@mongo:27017/the_database
       - REDIS_URL=//redis:6379
-    container_name: todo-backend-dev
+    container_name: todo-backend
 
   mongo:
     image: mongo
@@ -48,7 +41,7 @@ services:
   nginx:
     image: nginx:1.20.1
     volumes:
-      - ./nginx_dev.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
     ports:
       - 8080:80
     container_name: reverse-proxy

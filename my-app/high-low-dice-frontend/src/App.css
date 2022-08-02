@@ -1,0 +1,239 @@
+body {
+  background-image: url('./media/dice.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+/* ***** TOPBAR CSS ***** */
+.topbar {
+  background-color: #397d2f;
+  font-size: 0.7em;
+  align-items: center;
+  padding: 0.5em 0.5em;
+  font-weight: bold;
+}
+#title {
+  align-self: center;
+  text-align: center;
+}
+#player {
+  align-self: center;
+  text-align: center;
+}
+#room {
+  align-self: center;
+  padding-left: 20px;
+}
+#info {
+  align-self: center;
+  margin-right: 2em;
+}
+
+/* ***** LOGIN CSS ***** */
+.loginContainer {
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  font-size: 0.7em;
+  font-weight: bold;
+  padding: 0.5em 0.5em;
+  margin: 0.5em 0.5em;
+  width: 20em;
+}
+.loginSet {
+  display: inline-block;
+  align-items: center;
+  width: 100%;
+  margin-left: 1em;
+  margin-right: 0em;
+  padding-top: 0.35em;
+  padding-bottom: 0.625em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  border: solid #397d2f;
+  border-width: 2px;
+  border-radius: 0.5em;
+}
+.loginGroup {
+  padding-top: 0.3em;
+}
+
+/* ***** PLAYERS CSS ***** */
+.players-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  width: 40em;
+  padding: 0.2em 0.2em;
+  margin: 0.5em 0.5em;
+  border: solid #397d2f;
+  border-width: 2px;
+  border-radius: 0.5em;
+  font-size: 0.6em;
+  font-weight: bold;
+}
+.players-table {
+  border-collapse: separate;
+  border-spacing: 0em 0em;
+  background: rgba(57, 125, 47, 0.7);
+  width: 100%;
+}
+.low {
+  font-weight: bold;
+  color: red;
+}
+.high {
+  font-weight: bold;
+  color: blue;
+}
+.lower-or-higher {
+  font-weight: bold;
+  color: green;
+}
+
+/* ***** ROUND CSS ***** */
+.round-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  width: 20em;
+  padding: 0.2em 0.2em;
+  margin: 0.5em 0.5em;
+  border: solid #397d2f;
+  border-width: 2px;
+  border-radius: 0.5em;
+  font-size: 0.6em;
+  font-weight: bold;
+}
+
+/* ***** DICE CSS ***** */
+.dice-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: space-between;
+  width: 40em;
+  padding: 0.2em 0.2em;
+  margin: 2em 0.5em;
+  font-size: 0.6em;
+  font-weight: bold;
+}
+.dice-table {
+  border-collapse: separate;
+  border-spacing: 0em 0em;
+  width: 100%;
+  border: 1px;
+}
+.dice-td {
+  height: 50px;
+  width: 50px;
+}
+.dice-pic {
+  height: 50px;
+}
+
+/* ***** SUMMARY MODAL CSS ***** */
+.summary-divs-title {
+  width: 100%;
+  margin-bottom: 0.5em;
+  padding-left: 1em;
+  font-weight: bold;
+}
+.summary-divs {
+  width: 100%;
+  margin: 0em;
+  padding-left: 1em;
+}
+.summary-table {
+  margin-left: 1em;
+  border-collapse: separate;
+  border-spacing: 0em 0em;
+  width: auto;
+}
+.summary-table-td-first {
+  text-align: left;
+  padding-right: 2em;
+}
+.summary-table-td {
+  text-align: center;
+}
+
+/* ***** BUTTON CSS ***** */
+/* btn-hld color does not work but when btn-hld exits color can be set in xxx-button css*/
+.btn-hld {
+  color: red;
+}
+.login-button {
+  font-size: 0.8em;
+  font-weight: bold;
+  width: 25% !important;
+  padding: 0.2em;
+  margin-left: 0.5em;
+  background-color: #397d2f;
+}
+.new-game-button {
+  font-size: 0.85em;
+  font-weight: bold;
+  width: auto;
+  padding: 0.2em;
+  margin-left: 0.4em;
+  background-color: #397d2f;
+}
+.roll-dice-Button {
+  font-size: 1.5em;
+  font-weight: bold;
+  width: auto;
+  padding: 0.2em 0.4em;
+  margin-top: 1em;
+  background-color: #397d2f;
+}
+.modal-button {
+  font-size: 1em;
+  font-weight: bold;
+  width: auto;
+  padding: 0.2em 0.4em;
+  margin-top: 1em;
+  background-color: #397d2f;
+}
+
+/* ***** MODAL CSS ***** */
+.infoModal {
+  background-color: #397d2f;
+  border: 3px solid #397d2f;
+  border-radius: 0.7em;
+  box-shadow: 3px 3px 3px black;
+  top: 5%;
+  font-size: 0.7em;
+  width: 25em;
+}
+.modal-body {
+  padding: 0.6em;
+  margin: 0.0em;
+}
+
+/* ***** TOOLTIP CSS ***** */
+.tooltip > .tooltip-inner {
+  font-size: 0.6em;
+  background-color: #fff;
+  color: #062e56;
+  border: 0.5px solid #062e56;
+  padding-top: 0.05em;
+  padding-bottom: 0.05em;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+}
+
+
+/* ***** GENERAL CSS ***** */
+.aling-buttons {
+  display: flex;
+  align-items: center;
+}

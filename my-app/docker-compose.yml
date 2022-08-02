@@ -1,0 +1,27 @@
+services:
+  app:
+    image: high-low-dice-frontend
+    build:
+      context: ./high-low-dice-frontend
+      dockerfile: Dockerfile
+    container_name: high-low-dice-frontend
+  
+  server:
+    image: high-low-dice-backend
+    build:
+      context: ./high-low-dice-backend
+      dockerfile: Dockerfile
+    environment:
+      - SOCKETIO_CORS_ORIGIN=http://localhost:8080  # seems to have no effect when using docker-compose with reverse-proxy
+    container_name: high-low-dice-backend
+  
+  nginx:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    container_name: reverse-proxy
+    depends_on:
+      - app
+      - server

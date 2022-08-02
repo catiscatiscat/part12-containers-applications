@@ -1,0 +1,37 @@
+services:
+  app:
+    image: high-low-dice-frontend-dev
+    build:
+      context: ./high-low-dice-frontend
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./high-low-dice-frontend:/usr/src/app
+    environment:
+      - REACT_APP_BACKEND_URL=http://localhost:8080/api
+      - REACT_APP_SOCKETIO_URL=http://localhost:8080/    # socket.IO works with this URL,
+      - REACT_APP_SOCKETIO_PATH=/api/socket.io/          # and this path values
+      - PORT=3001
+      - WDS_SOCKET_PORT=8080  # needed for hotreloading to work
+    container_name: high-low-dice-frontend-dev
+  
+  server:
+    image: high-low-dice-backend-dev
+    build:
+      context: ./high-low-dice-backend
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./high-low-dice-backend:/usr/src/app
+    environment:
+      - SOCKETIO_CORS_ORIGIN=http://localhost:8080  # seems to have no effect when using docker-compose with reverse-proxy
+    container_name: high-low-dice-backend-dev
+  
+  nginx:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx_dev.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    container_name: reverse-proxy
+    depends_on:
+      - app
+      - server
